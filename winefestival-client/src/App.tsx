@@ -1,73 +1,187 @@
 import React from 'react';
 import './App.css';
-//@ts-ignore
-import CheeseburgerMenu from 'cheeseburger-menu';
-//@ts-ignore
-import HamburgerMenu from 'react-hamburger-menu';
 import SidebarNav from './sidebarnav/SidebarNav';
 //@ts-ignore
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Switch } from 'react-router';
 import EventsPage from './pages/events/EventsPage';
 import LandingPage from './pages/landingPage/LandingPage';
+import Icon from '@material-ui/core/Icon';
+import clsx from 'clsx';
+import MenuIcon from '@material-ui/icons/Menu';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import {
+  Divider,
+  IconButton,
+  AppBar,
+  Toolbar,
+  Badge,
+  Drawer,
+  List,
+  CssBaseline,
+  Typography,
+  makeStyles
+} from '@material-ui/core';
+import { mainListItems, secondaryListItems } from './listItems';
+import AboutPage from './pages/about/AboutPage';
+import WinePage from './pages/wines/WinePage';
+import RoseWinePage from './pages/wines/RoseWinePage';
+import RedWinePage from './pages/wines/RedWinePage';
 
-const contentStyles: any = {
-  fontFamily: 'sans-serif',
-  textAlign: 'center'
-};
+const drawerWidth = 240;
 
-export interface IAppProps {}
-
-export interface IAppState {
-  menuOpen: boolean;
-}
-
-export default class App extends React.Component<IAppProps, IAppState> {
-  constructor(props: IAppProps) {
-    super(props);
-
-    this.state = {
-      menuOpen: false
-    };
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex'
+  },
+  toolbar: {
+    paddingRight: 24 // keep right padding when drawer closed
+  },
+  toolbarIcon: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: '0 8px',
+    ...theme.mixins.toolbar
+  },
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen
+    })
+  },
+  appBarShift: {
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen
+    })
+  },
+  menuButton: {
+    marginRight: 36
+  },
+  menuButtonHidden: {
+    display: 'none'
+  },
+  title: {
+    flexGrow: 1
+  },
+  drawerPaper: {
+    position: 'relative',
+    whiteSpace: 'nowrap',
+    width: drawerWidth,
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen
+    })
+  },
+  drawerPaperClose: {
+    overflowX: 'hidden',
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen
+    }),
+    width: theme.spacing(7),
+    [theme.breakpoints.up('sm')]: {
+      width: theme.spacing(9)
+    }
+  },
+  appBarSpacer: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    height: '100vh',
+    overflow: 'auto',
+    marginTop: 64
+  },
+  container: {
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4)
+  },
+  paper: {
+    padding: theme.spacing(2),
+    display: 'flex',
+    overflow: 'auto',
+    flexDirection: 'column'
+  },
+  fixedHeight: {
+    height: 240
   }
+}));
 
-  public openMenu(): void {
-    this.setState({ menuOpen: true });
-  }
+export default function Dashboard() {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(true);
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
-  public closeMenu(): void {
-    this.setState({ menuOpen: false });
-  }
-
-  public render() {
-    return (
-      <div>
-        <CheeseburgerMenu
-          isOpen={this.state.menuOpen}
-          closeCallback={this.closeMenu.bind(this)}
-        >
-          <SidebarNav closeCallback={this.closeMenu.bind(this)} />
-        </CheeseburgerMenu>
-
-        <HamburgerMenu
-          isOpen={this.state.menuOpen}
-          menuClicked={this.openMenu.bind(this)}
-          width={32}
-          height={24}
-          strokeWidth={3}
-          rotate={0}
-          color="black"
-          borderRadius={0}
-          animationDuration={0.5}
-        />
-
-        <div style={contentStyles}>
+  return (
+    <div className={classes.root}>
+      <CssBaseline />
+      <AppBar
+        position="absolute"
+        className={clsx(classes.appBar, open && classes.appBarShift)}
+      >
+        <Toolbar className={classes.toolbar}>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            className={clsx(
+              classes.menuButton,
+              open && classes.menuButtonHidden
+            )}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            component="h1"
+            variant="h6"
+            color="inherit"
+            noWrap
+            className={classes.title}
+          >
+            Poor Woman's Wine Festival
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        variant="permanent"
+        classes={{
+          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose)
+        }}
+        open={open}
+      >
+        <div className={classes.toolbarIcon}>
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </div>
+        <Divider />
+        <List>{mainListItems}</List>
+        <Divider />
+        <List>{secondaryListItems}</List>
+      </Drawer>
+      <main className={classes.content}>
+        <div>
           <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/events" component={EventsPage} />
+            <Route exact path="/about" component={AboutPage} />
+            <Route exact path="/wines" component={WinePage} />
+            <Route exact path="/rosewines" component={RoseWinePage} />
+            <Route exact path="/redwines" component={RedWinePage} />
           </Switch>
         </div>
-      </div>
-    );
-  }
+      </main>
+    </div>
+  );
 }
