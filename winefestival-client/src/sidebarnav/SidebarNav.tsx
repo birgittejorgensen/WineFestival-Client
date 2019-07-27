@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 export interface ISidebarNavProps {
   closeCallback: () => void;
@@ -17,6 +18,10 @@ export default class SidebarNav extends React.PureComponent<
   }
 
   public render() {
-    return <div></div>;
+    return (
+      <div>
+        <Link to="/events">events</Link>
+      </div>
+    );
   }
 }

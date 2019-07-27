@@ -1,8 +1,15 @@
 import React from 'react';
 import './App.css';
+//@ts-ignore
 import CheeseburgerMenu from 'cheeseburger-menu';
+//@ts-ignore
 import HamburgerMenu from 'react-hamburger-menu';
 import SidebarNav from './sidebarnav/SidebarNav';
+//@ts-ignore
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Switch } from 'react-router';
+import EventsPage from './pages/events/EventsPage';
+import LandingPage from './pages/landingPage/LandingPage';
 
 const contentStyles: any = {
   fontFamily: 'sans-serif',
@@ -55,8 +62,10 @@ export default class App extends React.Component<IAppProps, IAppState> {
         />
 
         <div style={contentStyles}>
-          <h1>Cheeseburger Menu demo</h1>
-          <p>Click the hamburger icon to open menu</p>
+          <Switch>
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/events" component={EventsPage} />
+          </Switch>
         </div>
       </div>
     );
