@@ -1,4 +1,5 @@
 import * as React from 'react';
+import EventReviewCard from '../../components/EventCard';
 
 export interface IEventsPageProps {}
 
@@ -15,6 +16,13 @@ export default class EventsPage extends React.Component<
   }
 
   public render() {
-    return <div>Hello world!</div>;
+    return (
+      <div>
+        <EventReviewCard></EventReviewCard>
+        <EventReviewCard></EventReviewCard>
+        <EventReviewCard></EventReviewCard>
+        <EventReviewCard></EventReviewCard>
+      </div>
+    );
   }
 }

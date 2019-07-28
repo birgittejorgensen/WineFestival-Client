@@ -1,0 +1,97 @@
+import * as React from 'react';
+import Collapse from '@material-ui/core/Collapse';
+import { red } from '@material-ui/core/colors';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import EventIcon from '@material-ui/icons/Event';
+import clsx from 'clsx';
+import {
+  Card,
+  CardHeader,
+  Avatar,
+  IconButton,
+  CardMedia,
+  Typography,
+  CardContent,
+  CardActions,
+  makeStyles
+} from '@material-ui/core';
+
+const useStyles = makeStyles(theme => ({
+  card: {
+    maxWidth: 345
+  },
+  media: {
+    height: 0,
+    paddingTop: '56.25%' // 16:9
+  },
+  expand: {
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest
+    })
+  },
+  expandOpen: {
+    transform: 'rotate(180deg)'
+  },
+  avatar: {
+    backgroundColor: red[500]
+  }
+}));
+
+export default function EventReviewCard() {
+  const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
+
+  function handleExpandClick() {
+    setExpanded(!expanded);
+  }
+
+  return (
+    <Card className={classes.card}>
+      <CardHeader
+        action={
+          <IconButton aria-label="event">
+            <EventIcon />
+          </IconButton>
+        }
+        title="Rose Wine"
+        subheader="August 3, 2019"
+      />
+      <CardMedia
+        className={classes.media}
+        image="https://www.portugalresident.com/wp-content/uploads/2019/04/wine-tasting.jpg"
+        title="Rose event summer 2019"
+      />
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+          Enjoy rose in the hot sun!
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton
+          className={clsx(classes.expand, {
+            [classes.expandOpen]: expanded
+          })}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
+          <Typography paragraph>Date:</Typography>
+          <Typography paragraph>August 3rd 2019, 15:00</Typography>
+          <Typography paragraph>Location:</Typography>
+          <Typography paragraph>Kolonihaven</Typography>
+          <Typography paragraph>Price:</Typography>
+          <Typography>75kr.</Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+  );
+}

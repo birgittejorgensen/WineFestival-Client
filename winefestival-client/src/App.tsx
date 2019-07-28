@@ -5,18 +5,15 @@ import SidebarNav from './sidebarnav/SidebarNav';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Switch } from 'react-router';
 import EventsPage from './pages/events/EventsPage';
-import LandingPage from './pages/landingPage/LandingPage';
-import Icon from '@material-ui/core/Icon';
+import LandingPage from './pages/welcome/LogInPage';
 import clsx from 'clsx';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import {
   Divider,
   IconButton,
   AppBar,
   Toolbar,
-  Badge,
   Drawer,
   List,
   CssBaseline,
