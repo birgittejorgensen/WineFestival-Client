@@ -5,7 +5,7 @@ import SidebarNav from './sidebarnav/SidebarNav';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Switch } from 'react-router';
 import EventsPage from './pages/events/EventsPage';
-import LandingPage from './pages/welcome/LogInPage';
+import LandingPage from './pages/welcome/LoginPage';
 import clsx from 'clsx';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -25,6 +25,7 @@ import AboutPage from './pages/about/AboutPage';
 import WinePage from './pages/wines/WinePage';
 import RoseWinePage from './pages/wines/RoseWinePage';
 import RedWinePage from './pages/wines/RedWinePage';
+import LoginHelpPage from './pages/welcome/LoginHelpPage';
 
 const drawerWidth = 240;
 
@@ -171,6 +172,7 @@ export default function Dashboard() {
         <div>
           <Switch>
             <Route exact path="/" component={LandingPage} />
+            <Route exact path="/loginhelp" component={LoginHelpPage} />
             <Route exact path="/events" component={EventsPage} />
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/wines" component={WinePage} />
