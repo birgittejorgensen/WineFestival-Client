@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PreviousWineCard from '../../components/PreviousWineCard';
 
 export interface IWinePageProps {}
 
@@ -15,6 +16,12 @@ export default class WinePage extends React.Component<
   }
 
   public render() {
-    return <div>Under construction ;)</div>;
+    return (
+      <div>
+        <PreviousWineCard></PreviousWineCard>
+        <PreviousWineCard></PreviousWineCard>
+        <PreviousWineCard></PreviousWineCard>
+      </div>
+    );
   }
 }

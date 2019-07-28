@@ -8,6 +8,8 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,6 +22,12 @@ const useStyles = makeStyles(theme => ({
   },
   selectEmpty: {
     marginTop: theme.spacing(2)
+  },
+  button: {
+    margin: theme.spacing(1)
+  },
+  input: {
+    display: 'none'
   }
 }));
 
@@ -167,6 +175,14 @@ export default function NativeSelects() {
         </Select>
         <FormHelperText>Required</FormHelperText>
       </FormControl>
+      <Button
+        variant="contained"
+        color="secondary"
+        className={classes.button}
+        component={props => <Link to="event" {...props} />}
+      >
+        Submit
+      </Button>
     </div>
   );
 }
