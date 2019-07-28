@@ -14,16 +14,9 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import VoteIcon from '@material-ui/icons/HowToVote';
 import { Link } from 'react-router-dom';
 
+import './WineCard.scss';
+
 const useStyles = makeStyles(theme => ({
-  card: {
-    maxWidth: 345
-  },
-  media: {
-    height: 100,
-    width: 60,
-    marginLeft: 135,
-    paddingTop: '56.25%' // 16:9
-  },
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -33,9 +26,6 @@ const useStyles = makeStyles(theme => ({
   },
   expandOpen: {
     transform: 'rotate(180deg)'
-  },
-  avatar: {
-    backgroundColor: red[500]
   }
 }));
 
@@ -48,7 +38,7 @@ export default function RecipeReviewCard() {
   }
 
   return (
-    <Card className={classes.card}>
+    <Card className="WineCard">
       <CardHeader
         action={
           <IconButton
@@ -62,7 +52,7 @@ export default function RecipeReviewCard() {
         subheader="2016"
       />
       <CardMedia
-        className={classes.media}
+        className="WineCard__Media"
         image="https://cdn.shopify.com/s/files/1/2479/4148/products/793426_1024x1024.jpg?v=1560612887"
         title="Rose wine"
       />

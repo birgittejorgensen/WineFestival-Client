@@ -1,0 +1,10 @@
+.WineCard {
+  max-width: 365px;
+
+  &__Media {
+    height: 100;
+    width: 60;
+    margin-left: 135;
+    padding-top: '56.25%'; // 16:9
+  }
+}
