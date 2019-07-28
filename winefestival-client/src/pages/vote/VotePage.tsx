@@ -10,12 +10,9 @@ import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import './VotePage.scss';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap'
-  },
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120
@@ -25,9 +22,6 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     margin: theme.spacing(1)
-  },
-  input: {
-    display: 'none'
   }
 }));
 
@@ -52,7 +46,7 @@ export default function NativeSelects() {
   //   };
 
   return (
-    <div className={classes.root}>
+    <div className="FormControl">
       <FormControl required className={classes.formControl}>
         <InputLabel htmlFor="appearance-native-required">Appearance</InputLabel>
         <Select

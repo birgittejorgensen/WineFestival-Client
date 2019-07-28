@@ -1,5 +1,5 @@
 import * as React from 'react';
-import EventReviewCard from '../../components/EventCard';
+import EventReviewCard from '../../components/eventCard/EventCard';
 
 export interface IEventsPageProps {}
 

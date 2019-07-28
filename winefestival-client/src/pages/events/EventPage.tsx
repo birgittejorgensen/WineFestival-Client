@@ -1,5 +1,5 @@
 import * as React from 'react';
-import WineCard from '../../components/WineCard';
+import WineCard from '../../components/wineCard/WineCard';
 
 export interface IEventPageProps {}
 

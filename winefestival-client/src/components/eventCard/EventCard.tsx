@@ -7,6 +7,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import EventIcon from '@material-ui/icons/Event';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
+import './EventCard.scss';
 import {
   Card,
   CardHeader,
@@ -20,13 +21,6 @@ import {
 } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
-  card: {
-    maxWidth: 345
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%' // 16:9
-  },
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -37,9 +31,6 @@ const useStyles = makeStyles(theme => ({
   expandOpen: {
     transform: 'rotate(180deg)'
   },
-  avatar: {
-    backgroundColor: red[500]
-  }
 }));
 
 export default function EventReviewCard() {
@@ -51,7 +42,7 @@ export default function EventReviewCard() {
   }
 
   return (
-    <Card className={classes.card}>
+    <Card className="EventCard">
       <CardHeader
         action={
           <IconButton
@@ -65,7 +56,7 @@ export default function EventReviewCard() {
         subheader="August 3, 2019"
       />
       <CardMedia
-        className={classes.media}
+        className="EventCard__Media"
         image="https://www.portugalresident.com/wp-content/uploads/2019/04/wine-tasting.jpg"
         title="Rose event summer 2019"
       />
