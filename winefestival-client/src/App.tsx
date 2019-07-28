@@ -26,6 +26,8 @@ import WinePage from './pages/wines/WinePage';
 import RoseWinePage from './pages/wines/RoseWinePage';
 import RedWinePage from './pages/wines/RedWinePage';
 import LoginHelpPage from './pages/welcome/LoginHelpPage';
+import EventPage from './pages/events/EventPage';
+import VotePage from './pages/vote/VotePage';
 
 const drawerWidth = 240;
 
@@ -178,6 +180,8 @@ export default function Dashboard() {
             <Route exact path="/wines" component={WinePage} />
             <Route exact path="/rosewines" component={RoseWinePage} />
             <Route exact path="/redwines" component={RedWinePage} />
+            <Route exact path="/event" component={EventPage} />
+            <Route exact path="/vote" component={VotePage} />
           </Switch>
         </div>
       </main>

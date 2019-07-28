@@ -5,6 +5,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import EventIcon from '@material-ui/icons/Event';
+import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import {
   Card,
@@ -53,7 +54,10 @@ export default function EventReviewCard() {
     <Card className={classes.card}>
       <CardHeader
         action={
-          <IconButton aria-label="event">
+          <IconButton
+            aria-label="event"
+            component={props => <Link to="event" {...props} />}
+          >
             <EventIcon />
           </IconButton>
         }
