@@ -26,7 +26,7 @@ import WinePage from './pages/wines/WinePage';
 import RoseWinePage from './pages/wines/RoseWinePage';
 import RedWinePage from './pages/wines/RedWinePage';
 import LoginHelpPage from './pages/welcome/LoginHelpPage';
-import EventPage from './pages/events/EventPage';
+import EventPage from './pages/events/EventPageDetail';
 import VotePage from './pages/vote/VotePage';
 
 const drawerWidth = 240;

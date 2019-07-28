@@ -1,15 +1,16 @@
 import * as React from 'react';
 import WineCard from '../../components/wineCard/WineCard';
+import './EventPageDetail.scss';
 
-export interface IEventPageProps {}
+export interface IEventPageDetailProps {}
 
-export interface IEventPageState {}
+export interface IEventPageDetailState {}
 
-export default class EventPage extends React.Component<
-  IEventPageProps,
-  IEventPageState
+export default class EventPageDetail extends React.Component<
+  IEventPageDetailProps,
+  IEventPageDetailState
 > {
-  constructor(props: IEventPageProps) {
+  constructor(props: IEventPageDetailProps) {
     super(props);
 
     this.state = {};
@@ -17,7 +18,7 @@ export default class EventPage extends React.Component<
 
   public render() {
     return (
-      <div>
+      <div className='EventPageDetail'>
         <WineCard></WineCard>
         <WineCard></WineCard>
         <WineCard></WineCard>

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import EventReviewCard from '../../components/eventCard/EventCard';
+import EventCard from '../../components/eventCard/EventCard';
+import './EventsPage.scss';
 
 export interface IEventsPageProps {}
 
@@ -17,11 +18,11 @@ export default class EventsPage extends React.Component<
 
   public render() {
     return (
-      <div>
-        <EventReviewCard></EventReviewCard>
-        <EventReviewCard></EventReviewCard>
-        <EventReviewCard></EventReviewCard>
-        <EventReviewCard></EventReviewCard>
+      <div className="EventPage">
+        <EventCard></EventCard>
+        <EventCard></EventCard>
+        <EventCard></EventCard>
+        <EventCard></EventCard>
       </div>
     );
   }
