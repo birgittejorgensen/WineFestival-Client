@@ -58,6 +58,7 @@
     "singleQuote": true
   },
   "devDependencies": {
+    "@types/material-ui": "^0.21.6",
     "node-sass": "^4.12.0"
   }
 }

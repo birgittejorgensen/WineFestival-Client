@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { RouteComponentProps } from 'react-router';
 
 function MadeWithLove() {
   return (
@@ -50,8 +51,14 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SignIn() {
+interface ILoginPageProps extends RouteComponentProps {}
+
+const LoginPage: React.FunctionComponent<ILoginPageProps> = props => {
   const classes = useStyles();
+
+  const clickSignIn: () => void = () => {
+    props.history.push('/dashboard');
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -96,6 +103,7 @@ export default function SignIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={clickSignIn}
           >
             Sign In
           </Button>
@@ -118,4 +126,6 @@ export default function SignIn() {
       </Box>
     </Container>
   );
-}
+};
+
+export default LoginPage;

@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function NativeSelects() {
+export default function VotePage() {
   const classes = useStyles();
   const [state, setState] = React.useState({
     age: '',
