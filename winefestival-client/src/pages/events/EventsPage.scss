@@ -1,6 +1,9 @@
 .EventPage {
   display: flex;
-  background: #ffc0cb;
   flex-wrap: wrap;
   width: 100%;
+  &__EventCard {
+    width: 28%;
+    margin: 20px 40px 20px 40px;
+  }
 }

@@ -3,4 +3,9 @@
   background: #ffc0cb;
   flex-wrap: wrap;
   width: 100%;
+
+  &__WineCard {
+    width: 28%;
+    margin: 20px 40px 20px 40px;
+  }
 }

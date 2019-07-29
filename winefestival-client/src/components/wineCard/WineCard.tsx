@@ -29,7 +29,11 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function RecipeReviewCard() {
+interface IWineCardProps {
+  className?: string;
+}
+
+const WineCard: React.FunctionComponent<IWineCardProps> = props => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -38,7 +42,7 @@ export default function RecipeReviewCard() {
   }
 
   return (
-    <Card className="WineCard">
+    <Card className={`WineCard ${props.className}`}>
       <CardHeader
         action={
           <IconButton
@@ -88,4 +92,6 @@ export default function RecipeReviewCard() {
       </Collapse>
     </Card>
   );
-}
+};
+
+export default WineCard;

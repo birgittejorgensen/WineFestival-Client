@@ -19,10 +19,10 @@ export default class EventsPage extends React.Component<
   public render() {
     return (
       <div className="EventPage">
-        <EventCard></EventCard>
-        <EventCard></EventCard>
-        <EventCard></EventCard>
-        <EventCard></EventCard>
+        <EventCard className="EventPage__EventCard"></EventCard>
+        <EventCard className="EventPage__EventCard"></EventCard>
+        <EventCard className="EventPage__EventCard"></EventCard>
+        <EventCard className="EventPage__EventCard"></EventCard>
       </div>
     );
   }

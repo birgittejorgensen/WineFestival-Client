@@ -30,10 +30,14 @@ const useStyles = makeStyles(theme => ({
   },
   expandOpen: {
     transform: 'rotate(180deg)'
-  },
+  }
 }));
 
-export default function EventReviewCard() {
+interface IEventCardProps {
+  className?: string;
+}
+
+const EventCard: React.FunctionComponent<IEventCardProps> = props => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -42,7 +46,7 @@ export default function EventReviewCard() {
   }
 
   return (
-    <Card className="EventCard">
+    <Card className={`EventCard ${props.className}`}>
       <CardHeader
         action={
           <IconButton
@@ -89,4 +93,6 @@ export default function EventReviewCard() {
       </Collapse>
     </Card>
   );
-}
+};
+
+export default EventCard;

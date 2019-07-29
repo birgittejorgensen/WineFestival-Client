@@ -18,12 +18,12 @@ export default class EventPageDetail extends React.Component<
 
   public render() {
     return (
-      <div className='EventPageDetail'>
-        <WineCard></WineCard>
-        <WineCard></WineCard>
-        <WineCard></WineCard>
-        <WineCard></WineCard>
-        <WineCard></WineCard>
+      <div className="EventPageDetail">
+        <WineCard className="EventPageDetail__WineCard"></WineCard>
+        <WineCard className="EventPageDetail__WineCard"></WineCard>
+        <WineCard className="EventPageDetail__WineCard"></WineCard>
+        <WineCard className="EventPageDetail__WineCard"></WineCard>
+        <WineCard className="EventPageDetail__WineCard"></WineCard>
       </div>
     );
   }
