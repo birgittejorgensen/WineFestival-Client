@@ -1,5 +1,5 @@
 import React from "react";
 
-export function HomePage() {
+export function EventsPage() {
   return <div>homepage</div>;
 }
