@@ -1,0 +1,23 @@
+Primary:
+#fce4ec
+
+P- light
+#ffffff
+
+P-Dark
+#c9b2ba
+
+Text om P
+#000000
+
+Secondary
+#ad5774
+
+S- light
+#e186a3
+
+S -Dark
+#7b2a49
+
+Text on S
+#ffffff
