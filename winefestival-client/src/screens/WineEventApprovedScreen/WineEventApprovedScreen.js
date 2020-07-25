@@ -4,7 +4,7 @@ import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import MaterialUnderlineTextbox1 from "../../components/MaterialUnderlineTextbox1";
-import MaterialButtonViolet1 from "../../components/EditButton";
+import ButtonPrimary from "../../components/Buttons/ButtonPrimary/ButtonPrimary";
 import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
 import MaterialIconTextButtonsFooter1 from "../../components/MaterialIconTextButtonsFooter1";
 import { styles } from "./WineEventApprovedScreen.style";
@@ -38,9 +38,7 @@ function WineEventApprovedScreen(props) {
           <MaterialUnderlineTextbox1
             style={styles.materialUnderlineTextbox1}
           ></MaterialUnderlineTextbox1>
-          <MaterialButtonViolet1
-            style={styles.materialButtonViolet1}
-          ></MaterialButtonViolet1>
+          <ButtonPrimary style={styles.editWineButton}></ButtonPrimary>
         </View>
       </View>
       <View style={styles.image1Stack}>

@@ -33,7 +33,7 @@ function HomeScreen(props) {
       />
       <View style={styles.group}>
         <ButtonPrimary
-          style={styles.materialButtonPrimary}
+          style={styles.editProfileButton}
           state={{ text: "Edit Profile" }}
         />
       </View>
