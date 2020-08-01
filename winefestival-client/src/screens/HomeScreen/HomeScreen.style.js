@@ -1,3 +1,5 @@
+import { StyleSheet, View, Image, Text } from "react-native";
+
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -79,7 +81,7 @@ export const styles = StyleSheet.create({
     marginTop: 19,
     marginLeft: 98,
   },
-  materialButtonPrimary: {
+  editProfileButton: {
     height: 36,
     width: 179,
     borderRadius: 8,

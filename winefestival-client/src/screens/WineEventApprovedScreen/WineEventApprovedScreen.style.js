@@ -1,3 +1,5 @@
+import { StyleSheet } from "react-native";
+
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -85,7 +87,7 @@ export const styles = StyleSheet.create({
     width: 70,
     marginLeft: 5,
   },
-  materialButtonViolet1: {
+  editWineButton: {
     height: 29,
     width: 101,
     backgroundColor: "rgba(252,228,236,1)",

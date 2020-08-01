@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Image, Text } from "react-native";
-import MaterialIconTextButtonsFooter1 from "../../components/MaterialIconTextButtonsFooter1";
+import MaterialIconTextButtonsFooter1 from "../../components/Footer/MaterialIconTextButtonsFooter1";
 import ButtonPrimary from "../../components/Buttons/ButtonPrimary/ButtonPrimary";
-import SecondaryButton from "../components/SecondaryButton";
 import SecondaryButton from "../../components/Buttons/ButtonSecondary/ButtonSecondary";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import styles from "./HomeScreen.style";
+import { styles } from "./HomeScreen.style";
 
 function HomeScreen(props) {
   return (
@@ -15,7 +14,7 @@ function HomeScreen(props) {
       ></MaterialIconTextButtonsFooter1>
       <View style={styles.image1Stack}>
         <Image
-          source={require("../assets/images/GirlsWithGlasses1.jpg")}
+          source={require("./../../assets/images/GirlsWithGlasses1.jpg")}
           resizeMode="stretch"
           style={styles.image1}
         ></Image>

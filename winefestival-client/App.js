@@ -4,19 +4,19 @@ import { createStackNavigator } from "react-navigation-stack";
 import { createDrawerNavigator } from "react-navigation-drawer";
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
-import EditProfileScreen from "./src/screens/EditProfileScreen";
-import EventScreen from "./src/screens/EventScreen";
-import EventsScreen from "./src/screens/EventsScreen";
-import EventsSignUpScreen from "./src/screens/EventsSignUpScreen";
-import FirstRunExperienceScreen from "./src/screens/FirstRunExperienceScreen";
-import HomeScreen from "./src/screens/HomeScreen";
-import MyEventsScreen from "./src/screens/MyEventsScreen";
-import MyWinesScreen from "./src/screens/MyWinesScreen";
-import SignInScreen from "./src/screens/SignInScreen";
-import WelcomeScreen from "./src/screens/WelcomeScreen";
-import WineEventApprovedScreen from "./src/screens/WineEventApprovedScreen";
-import WineScreen from "./src/screens/WineScreen";
-import WinesMenuScreen from "./src/screens/WinesMenuScreen";
+import EditProfileScreen from "./src/screens/EditProfileScreen/EditProfileScreen";
+import EventScreen from "./src/screens/EventScreen/EventScreen";
+import EventsScreen from "./src/screens/EventsScreen/EventsScreen";
+import EventsSignUpScreen from "./src/screens/EventsSignUpScreen/EventsSignUpScreen";
+import FirstRunExperienceScreen from "./src/screens/FirstRunExperienceScreen/FirstRunExperienceScreen";
+import HomeScreen from "./src/screens/HomeScreen/HomeScreen";
+import MyEventsScreen from "./src/screens/MyEventsScreen/MyEventsScreen";
+import MyWinesScreen from "./src/screens/MyWinesScreen/MyWinesScreen";
+import SignInScreen from "./src/screens/SignInScreen/SignInScreen";
+import WelcomeScreen from "./src/screens/WelcomeScreen/WelcomeScreen";
+import WineEventApprovedScreen from "./src/screens/WineEventApprovedScreen/WineEventApprovedScreen";
+import WineScreen from "./src/screens/WineScreen/WineScreen";
+import WinesMenuScreen from "./src/screens/WinesMenuScreen/WinesMenuScreen";
 
 const DrawerNavigation = createDrawerNavigator({
   EditProfileScreen: EditProfileScreen,
@@ -31,13 +31,13 @@ const DrawerNavigation = createDrawerNavigator({
   WelcomeScreen: WelcomeScreen,
   WineEventApprovedScreen: WineEventApprovedScreen,
   WineScreen: WineScreen,
-  WinesMenuScreen: WinesMenuScreen
+  WinesMenuScreen: WinesMenuScreen,
 });
 
 const StackNavigation = createStackNavigator(
   {
     DrawerNavigation: {
-      screen: DrawerNavigation
+      screen: DrawerNavigation,
     },
     EditProfileScreen: EditProfileScreen,
     EventScreen: EventScreen,
@@ -51,10 +51,10 @@ const StackNavigation = createStackNavigator(
     WelcomeScreen: WelcomeScreen,
     WineEventApprovedScreen: WineEventApprovedScreen,
     WineScreen: WineScreen,
-    WinesMenuScreen: WinesMenuScreen
+    WinesMenuScreen: WinesMenuScreen,
   },
   {
-    headerMode: "none"
+    headerMode: "none",
   }
 );
 
@@ -78,8 +78,8 @@ async function loadResourcesAsync() {
   await Promise.all([
     Font.loadAsync({
       "merriweather-regular": require("./src/assets/fonts/merriweather-regular.ttf"),
-      "roboto-regular": require("./src/assets/fonts/roboto-regular.ttf")
-    })
+      "roboto-regular": require("./src/assets/fonts/roboto-regular.ttf"),
+    }),
   ]);
 }
 function handleLoadingError(error) {

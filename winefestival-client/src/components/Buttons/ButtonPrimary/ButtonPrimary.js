@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
-import styles from "./ButtonPrimary.style";
+import { styles } from "./ButtonPrimary.style";
 
 function ButtonPrimary(props) {
   return (

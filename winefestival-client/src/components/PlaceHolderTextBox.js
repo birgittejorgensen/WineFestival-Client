@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View, TextInput } from "react-native";
 
-function MaterialUnderlineTextbox1(props) {
+function PlaceHolderTextBox(props) {
   return (
     <View style={[styles.container, props.style]}>
       <TextInput
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     borderColor: "#D9D5DC",
     backgroundColor: "transparent",
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
   },
   inputStyle: {
     color: "#000",
@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     flex: 1,
     lineHeight: 16,
     paddingTop: 16,
-    paddingBottom: 8
-  }
+    paddingBottom: 8,
+  },
 });
 
-export default MaterialUnderlineTextbox1;
+export default PlaceHolderTextBox;

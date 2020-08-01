@@ -3,10 +3,10 @@ import { StyleSheet, View, Text, Image } from "react-native";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import EntypoIcon from "react-native-vector-icons/Entypo";
-import MaterialUnderlineTextbox1 from "../../components/MaterialUnderlineTextbox1";
+import PlaceHolderTextBox from "../../components/PlaceHolderTextBox";
 import ButtonPrimary from "../../components/Buttons/ButtonPrimary/ButtonPrimary";
 import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
-import MaterialIconTextButtonsFooter1 from "../../components/MaterialIconTextButtonsFooter1";
+import MaterialIconTextButtonsFooter1 from "../../components/Footer/MaterialIconTextButtonsFooter1";
 import { styles } from "./WineEventApprovedScreen.style";
 
 function WineEventApprovedScreen(props) {
@@ -35,15 +35,15 @@ function WineEventApprovedScreen(props) {
             name="glass-wine"
             style={styles.icon9}
           ></MaterialCommunityIconsIcon>
-          <MaterialUnderlineTextbox1
+          <PlaceHolderTextBox
             style={styles.materialUnderlineTextbox1}
-          ></MaterialUnderlineTextbox1>
+          ></PlaceHolderTextBox>
           <ButtonPrimary style={styles.editWineButton}></ButtonPrimary>
         </View>
       </View>
       <View style={styles.image1Stack}>
         <Image
-          source={require("../assets/images/GirlsWithGlasses1.jpg")}
+          source={require("./../../assets/images/GirlsWithGlasses1.jpg")}
           resizeMode="stretch"
           style={styles.image1}
         ></Image>
